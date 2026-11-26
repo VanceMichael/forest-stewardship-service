@@ -1,0 +1,172 @@
+{
+  "synthetic": true,
+  "records": [
+    {
+      "id": "contract-A",
+      "kind": "contract",
+      "refs": [],
+      "builder": "builder-A",
+      "maintainer": "care-A",
+      "retention_rate": "0.20"
+    },
+    {
+      "id": "unit-A",
+      "kind": "work_unit",
+      "refs": [
+        "contract-A"
+      ],
+      "parcel": "parcel-east",
+      "area_m2": 1000,
+      "amount": 1000000,
+      "dependencies": [
+        "fence-A"
+      ]
+    },
+    {
+      "id": "unit-B",
+      "kind": "work_unit",
+      "refs": [
+        "contract-A"
+      ],
+      "parcel": "parcel-east",
+      "area_m2": 800,
+      "amount": 800000,
+      "dependencies": [
+        "fence-A"
+      ]
+    },
+    {
+      "id": "unit-C",
+      "kind": "work_unit",
+      "refs": [
+        "contract-A"
+      ],
+      "parcel": "parcel-west",
+      "area_m2": 900,
+      "amount": 900000,
+      "dependencies": []
+    },
+    {
+      "id": "fence-A",
+      "kind": "facility",
+      "refs": [],
+      "status_fact": "inspection_pending"
+    },
+    {
+      "id": "plant-A",
+      "kind": "planting",
+      "refs": [
+        "unit-A"
+      ],
+      "at": "2026-10-01T08:00:00+08:00"
+    },
+    {
+      "id": "obs-A1",
+      "kind": "observation",
+      "refs": [
+        "unit-A",
+        "plant-A"
+      ],
+      "at": "2026-10-15T09:00:00+08:00",
+      "alive": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "dead": []
+    },
+    {
+      "id": "obs-A2",
+      "kind": "observation",
+      "refs": [
+        "unit-A",
+        "plant-A"
+      ],
+      "at": "2026-11-02T09:00:00+08:00",
+      "alive": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "dead": [
+        10
+      ]
+    },
+    {
+      "id": "handover-A",
+      "kind": "handover_input",
+      "refs": [
+        "unit-A"
+      ],
+      "at": "2026-11-03T09:00:00+08:00",
+      "from_party": "builder-A",
+      "to_party": "care-A"
+    },
+    {
+      "id": "defect-A",
+      "kind": "defect_report",
+      "refs": [
+        "unit-A",
+        "plant-A"
+      ],
+      "plants": [
+        10
+      ],
+      "reported_by": "care-A",
+      "at": "2026-11-04T09:00:00+08:00"
+    },
+    {
+      "id": "defect-copy",
+      "kind": "defect_report",
+      "refs": [
+        "unit-A",
+        "plant-A"
+      ],
+      "plants": [
+        10
+      ],
+      "reported_by": "care-B",
+      "at": "2026-11-05T09:00:00+08:00"
+    },
+    {
+      "id": "range-correction",
+      "kind": "survey_correction",
+      "refs": [
+        "unit-A",
+        "unit-B"
+      ],
+      "moved_area_m2": 100,
+      "reason": "界桩复核"
+    },
+    {
+      "id": "fence-recheck",
+      "kind": "inspection",
+      "refs": [
+        "fence-A"
+      ],
+      "at": "2026-12-04T10:00:00+08:00",
+      "fact": "returned"
+    }
+  ],
+  "principals": {
+    "builder-user": "builder-A",
+    "surveyor-A": "survey",
+    "acceptor-A": "acceptance",
+    "care-user": "care-A",
+    "project-A": "payment-proposer",
+    "reviewer-A": "payment-reviewer"
+  }
+}

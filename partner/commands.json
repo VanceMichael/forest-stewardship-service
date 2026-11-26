@@ -1,0 +1,45 @@
+{
+  "synthetic": true,
+  "commands": [
+    {
+      "id": "pay-A",
+      "operation": "payment",
+      "refs": [
+        "unit-A"
+      ],
+      "request": {
+        "unit": "unit-A",
+        "amount": 200000
+      },
+      "response_status": 504,
+      "observations": [
+        {
+          "state": "pending"
+        },
+        {
+          "state": "paid",
+          "amount": 200000,
+          "voucher": "forest-P1"
+        }
+      ]
+    },
+    {
+      "id": "pay-C",
+      "operation": "payment",
+      "refs": [
+        "unit-C"
+      ],
+      "request": {
+        "unit": "unit-C",
+        "amount": 180000
+      },
+      "response_status": 202,
+      "observations": [
+        {
+          "state": "rejected",
+          "reason": "账户关闭"
+        }
+      ]
+    }
+  ]
+}
